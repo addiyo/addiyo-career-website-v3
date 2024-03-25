@@ -8,7 +8,8 @@
       #banner{
         height: 360px;
         width: 100%;
-        object-fit:cover;    
+        object-fit:cover; 
+        margin-bottom: 16px;
       }
     </style>
 
@@ -16,14 +17,22 @@
     
   </head>
   <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="https://79ec1603-9bd1-411d-a568-8ced85bd3ce2-00-34lougj92tee5.riker.replit.dev/static/banner.jpg">
     <div class="container">
       <h1 class= "text-center mt-2 mb-4">{{company_name}} Careers</h1>
-      <img class="img-fluid" id="banner" src="https://79ec1603-9bd1-411d-a568-8ced85bd3ce2-00-34lougj92tee5.riker.replit.dev/static/banner.jpg">
+      
         
-      <h2 class="text-center mt-2 mb-4">About Addiyo</h2>
+      <div class="row" style="margin-bottom:16px">
+        <div class= "col-md-6">
       <p class = "lead">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque egestas diam in arcu cursus. Turpis egestas maecenas pharetra convallis posuere morbi leo urna. In aliquam sem fringilla ut morbi tincidunt augue interdum velit. Viverra orci sagittis eu volutpat odio facilisis mauris sit. Auctor eu augue ut lectus arcu bibendum at varius vel. Aliquam sem et tortor consequat id porta nibh. Lacinia quis vel eros donec. Sit amet tellus cras adipiscing enim eu turpis. In nibh mauris cursus mattis molestie a.
       </p>
+        </div>
+      <div class="d-none d-md-block col-md-6">
+        <img src = "/static/people.jpg" style= "height:320px; border-radius:4px">
+      </div>
+      </div>
       <h2 class="text-center mt-2 mb-4">Job Openings</h2>
       <div>
         {% for job in jobs %}
@@ -31,9 +40,9 @@
         {% endfor %}
       </div>
       <div class = "text-center">
-      <button class="btn btn-primary btn-lg">Contact Us</button>
-        <p class="mt-4">Copyright 2024 Addiyo</p>
+      <a class="btn btn-primary btn-lg"href = "mailto:hello@addiyo.com?subject=Questions%20about%20job%20openings&body=My%20name%3A%20%3Cyour%20name%3E%0D%0AMy%20question%3A%20%3Cresume%20link%3E%0D%0A">Contact Us</a>
       </div>
+      {% include 'footer.html' %}
   </div>  
   </body>
 </html>
